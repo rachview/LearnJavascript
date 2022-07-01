@@ -9,8 +9,8 @@
 body {
     background-color: rgb(238, 238, 238);
     color: black;
-    font-family: "Poppins";
-    font-family: 400;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
 }
 
 h1 {
