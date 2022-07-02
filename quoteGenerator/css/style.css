@@ -1,0 +1,120 @@
+:root {
+    --clr-main: rgb(82, 82, 82);
+    --clr-second: rgb(255, 255, 255);
+    --clr-third: rgb(0, 0, 0);
+    --clr-accent: rgb(255, 162, 21);
+    --clr-high: rgb(255, 255, 128);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--clr-main);
+    color: var(--clr-second);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.btn {
+    background-color: var(--clr-accent);
+    color: var(--clr-third);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 1em;
+}
+
+.btn:hover {
+    background-color: var(--clr-high);
+}
+
+.main,
+.container,
+.container_quote {
+    margin: 0 auto;
+    display: flex;
+
+}
+
+.main {
+    margin-top: 2em;
+    align-items: center;
+
+}
+
+
+.container {
+    flex-direction: column;
+    column-gap: 1em;
+    max-width: 70%;
+    outline: 1px var(--clr-high) solid;
+    outline-offset: 1em;
+}
+
+.container_generate {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 5em 0;
+}
+
+.container_quote {
+    font-size: 1rem;
+    align-content: left;
+    border-left: .125em solid var(--clr-high);
+    display: flex;
+    flex-direction: column;
+    padding: 0 .25em;
+
+}
+
+#fontawesome {
+    font-size: 5em;
+    flex: 1 1 10%;
+}
+
+.quote {
+    flex: 2 1 70%;
+}
+
+.container_author {
+    text-align: right;
+}
+
+.author::before {
+    content: "-";
+}
+
+.author {
+    color: var(--clr-accent);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (min-width:500px) {
+    .main {
+        margin-top: 5em;
+    }
+
+    .container_quote {
+        flex-direction: row;
+        gap: 1em;
+        padding: 0 2em;
+    }
+
+    .container {
+        outline-offset: 5em;
+        margin-top: 10%;
+    }
+}
