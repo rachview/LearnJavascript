@@ -1,0 +1,119 @@
+:root {
+    --clr-primary: rgb(0, 0, 0);
+    --clr-secondary: rgb(255, 255, 255);
+    --ff: 'Poppins', sans-serif;
+    --fs-normal: 400;
+    --fs-large: 600;
+    --fs-huge: 800;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--ff);
+    font-weight: var(--fs-normal);
+    color: var(--clr-primary);
+}
+
+h1 {
+    font-size: 1rem;
+    font-weight: var(--fs-large);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: .775rem;
+}
+
+main {
+    width: 100%;
+    max-width: 1500px;
+    height: 100vh;
+    flex-direction: row;
+}
+
+main,
+section {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+section {
+    width: 95%;
+    padding: 2em .5em;
+    border: 1px var(--clr-primary) solid;
+    border-radius: .5em;
+    text-align: center;
+    flex-direction: column;
+    gap: 1em;
+    background-color: var(--clr-secondary);
+}
+
+section,
+.btn {
+    box-shadow: 1px 1px 2px var(--clr-primary);
+}
+
+.btn {
+    font-family: var(--ff);
+    font-size: .875rem;
+    padding: .5em;
+    border: none;
+    border-radius: 1rem;
+}
+
+.btn:before {
+    content: "🌈 ";
+}
+
+.btn:after {
+    content: " 🎨";
+}
+
+.btn:hover {
+    background: var(--clr-secondary);
+    box-shadow: -1px -1px 3px var(--clr-primary);
+}
+
+
+@media (min-width: 300px) {
+
+    .btn {
+        font-size: 1rem;
+        padding: .5em 1em;
+    }
+
+    section {
+        width: 75%;
+    }
+}
+
+
+@media (min-width: 800px) {
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+        font-weight: var(--fs-huge);
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1.5rem;
+        padding: .5em 1em;
+    }
+
+    section {
+        width: 50%;
+    }
+}
