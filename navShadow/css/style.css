@@ -1,0 +1,253 @@
+:root {
+    --clr-primary: rgb(117, 117, 117);
+    --clr-primary-dk: rgb(0, 0, 0);
+    --clr-secondary: rgb(255, 255, 255);
+    --clr-secondary-dk: rgb(218, 218, 218);
+    --clr-accent: rgb(129, 205, 255);
+    --clr-accent-dk: rgb(14, 110, 173);
+    --ff: 'Poppins', sans-serif;
+    --fs-normal: 400;
+    --fs-large: 600;
+    --fs-huge: 800;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-padding, 100px);
+}
+
+body {
+    font-family: var(--ff);
+    font-weight: var(--fs-normal);
+    color: var(--clr-secondary);
+    background-color: var(--clr-primary);
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: var(--fs-large);
+    letter-spacing: 2px;
+    margin-bottom: .25rem;
+}
+
+.title {
+    display: block;
+    position: relative;
+    line-height: 1;
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 7.5rem;
+    top: -1.5rem;
+    left: -1rem;
+    background-color: var(--clr-accent);
+    box-shadow: -2px 3px 1.5px var(--clr-primary-dk);
+}
+
+.subtitle {
+    position: absolute;
+    top: 1.5em;
+    color: var(--clr-accent);
+    font-weight: var(--fs-huge);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: var(--fs-large);
+    color: var(--clr-accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+section p {
+    margin-bottom: 1.5rem;
+}
+
+
+article::first-letter {
+    color: var(--clr-accent);
+    font-size: 2rem;
+    font-weight: var(--fs-large);
+    letter-spacing: 1px;
+}
+
+header,
+article::first-letter,
+h2,
+.subtitle,
+.title {
+    text-shadow: -3px 3px 1.5px var(--clr-primary-dk), -1px 1px 2px var(--clr-primary-dk),
+        0px 0px 5px var(--clr-primary);
+}
+
+main {
+    width: 100%;
+    max-width: 1500px;
+    margin: 25em auto 0 auto;
+}
+
+section,
+.hero,
+footer {
+    margin: 0 auto;
+}
+
+section,
+.hero {
+    padding: 3em 2em;
+    width: 100%;
+    /* width: 90%;
+    max-width: 70ch; */
+}
+
+.hero {
+    position: relative;
+}
+
+footer {
+    padding: 2em 0;
+    background-color: var(--clr-secondary-dk);
+    color: var(--clr-primary);
+    text-align: center;
+}
+
+/* nav */
+header,
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    font-size: 2.5rem;
+    font-weight: var(--fs-huge);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    background-color: var(--clr-secondary-dk);
+}
+
+
+.nav-item {
+    font-size: 1.5rem;
+    font-weight: var(--fs-large);
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-accent-dk);
+    position: relative;
+    text-shadow: none;
+}
+
+.nav-link::after {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background-color: var(--clr-accent-dk);
+    transition: all 150ms ease-in-out;
+    transform: scaleX(0);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.page-title {
+    padding: .5em 0;
+
+}
+
+.page-title a {
+    color: var(--clr-accent) !important;
+    text-shadow: 1px 1px 1px var(--clr-primary-dk), -1px -1px 1px (var(--clr-primary-dk));
+}
+
+/* end nav */
+
+
+/* header scroll JAVAScript */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: all 300ms ease-in-out;
+    filter: none;
+}
+
+.scroll-down header {
+    transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up header {
+    filter: drop-shadow(0 -10px 20px var(--clr-accent));
+}
+
+/* end header scroll JAVAScript */
+
+@media(min-width:800px) {
+
+    header,
+    .nav-list {
+        flex-direction: row;
+        gap: 2em;
+    }
+
+    .title::before {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5rem;
+        top: -1.85rem;
+        left: -1rem;
+        background-color: var(--clr-accent);
+        box-shadow: -2px 3px 1.5px var(--clr-primary-dk);
+    }
+
+    main {
+        margin: 10em auto 0 auto;
+    }
+
+    section {
+        width: 90%;
+    }
+
+    article {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+
+}
