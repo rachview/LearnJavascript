@@ -1,0 +1,12 @@
+.box {
+    margin: 1rem auto 1rem auto;
+    max-width: 300px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+}
+
+.js-is-hidden {
+    display: none;
+}
