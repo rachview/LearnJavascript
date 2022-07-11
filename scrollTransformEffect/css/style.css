@@ -1,0 +1,77 @@
+/* From Online Tutorials: https: //www.youtube.com/watch?v=UggYTEgCGHE*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #323232;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    letter-spacing: .5px;
+    line-height: 1.6;
+}
+
+.bg h2 {
+    position: relative;
+    font-size: 5rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
+}
+
+
+section h2,
+section p {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+section h2 {
+
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px #c7167d, 3px 3px 6px #000;
+}
+
+section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+section {
+    padding: 100px
+}
+
+.bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #c7167d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.skewed-one,
+.skewed-two {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    background: #323232;
+}
+
+.skewed-one {
+    left: 50%;
+    transform: skewY(-15deg);
+    transform-origin: top left;
+}
+
+.skewed-two {
+    right: 50%;
+    transform: skewY(15deg);
+    transform-origin: top right;
+}

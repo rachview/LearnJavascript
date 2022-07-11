@@ -1,0 +1,76 @@
+/* From Online Tutorials: https: //www.youtube.com/watch?v=7exL28RKb5w&t=0s*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    font-family: "Poppins", sans-serif;
+}
+
+.title {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url("../img/heather-wilde-unsplash.jpg"), linear-gradient(230deg, #70f533, #b80562);
+    background-blend-mode: luminosity;
+    background-size: cover;
+    background-position: center;
+}
+
+.container .skewed {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: skewY(-10deg);
+    transform-origin: top left;
+}
+
+.container-title {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main {
+    position: relative;
+    min-height: 100vh;
+}
+
+
+section {
+    position: absolute;
+    top: 55em;
+    z-index: 9;
+}
+
+article {
+    width: 50%;
+    padding: 0 2rem;
+    margin: 0 auto;
+    color: #000;
+    line-height: 1.6;
+}
+
+article p {
+    margin-bottom: 1.5em;
+}
+
+@media (min-width:500px) {
+    section {
+        top: 70em;
+    }
+}

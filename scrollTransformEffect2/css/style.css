@@ -1,0 +1,99 @@
+/* From Online Tutorials: https: //www.youtube.com/watch?v=lZ-OO7x75Rc&t=0s*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    letter-spacing: .5px;
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px #00ffff, 1px 1px 3px #000;
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px #000;
+}
+
+section {
+    width: 100%;
+}
+
+.wrapper {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 6em 0;
+}
+
+.hero {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 500px);
+    background: #2abbff;
+    z-index: 1;
+}
+
+/* Adjust span.curve height for respnive design according to page width using CSS @media */
+.hero .curve {
+    position: absolute;
+    bottom: -50px;
+    height: 50px;
+    width: 100%;
+    transform-origin: top;
+}
+
+.hero .curve .img-curve {
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width:600px) {
+    .title {
+        font-size: 4.5rem;
+    }
+
+    .curve {
+        bottom: -100px;
+        height: 100px;
+    }
+
+}
+
+@media (min-width:900px) {
+    .title {
+        font-size: 6.5rem;
+    }
+
+    .curve {
+        bottom: -200px;
+        height: 200px;
+    }
+
+}
+
+.container {
+    position: absolute;
+    top: 400px;
+    color: #fff;
+    z-index: 999;
+}
+
+.container-text {
+    width: 80%;
+    margin: 0 auto;
+}

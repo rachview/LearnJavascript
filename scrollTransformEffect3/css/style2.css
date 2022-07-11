@@ -1,0 +1,51 @@
+/* From Online Tutorials: https: //www.youtube.com/watch?v=yJsOXvZhLVk&t=0s*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    letter-spacing: .5px;
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+}
+
+.title {
+    position: relative;
+    top: 250px;
+    z-index: 1;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
+    text-align: center;
+    width: 100%;
+}
+
+section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/heather-wilde-unsplash.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    clip-path: circle(0px at center);
+
+}
+
+.container {
+    position: relative;
+    margin-top: 200vh;
+    background-color: #fff;
+    padding: 100px;
+}
