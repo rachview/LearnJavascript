@@ -1,0 +1,62 @@
+/* From Menu Toggle Icon: https: //www.youtube.com/watch?v=kgxgL3KHRuU */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #04202e;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#toggle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #37a6ff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+#toggle.active {
+    background: #f7226a;
+}
+
+
+#toggle::before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    transition: 0.2s;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 0 #fff;
+}
+
+#toggle.active::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+}
+
+#toggle::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    transition: 0.2s;
+    transform: translateY(10px);
+}
+
+#toggle.active::after {
+    transform: translateY(0px) rotate(-45deg);
+}
