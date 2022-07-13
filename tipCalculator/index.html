@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+        <div class="calculator">
+            <header>
+                <h1>Tip Calculator</h1>
+            </header>
+            <main>
+                <section class="options">
+                    <div class="input-group">
+                        <div class="pre">$</div>
+                        <input class="cost" type="number" placeholder="How much was the bill?">
+                    </div>
+                    <div class="input-group">
+                        <select class="service" required>
+                            <option disabled selected>How was your service?</option>
+                            <option value="30">5 - Extraordinary</option>
+                            <option value="20">4 - Average</option>
+                            <option value="10">3 - Meh</option>
+                            <option value="5">2 - Guilt Tip</option>
+                            <option value="0">1 - Run</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" class="people" placeholder="How many are sharing the bill?">
+                    </div>
+                </section>
+                <section class="tip-wrap">
+                    <p>You should tip:</p>
+                    <h3 class="tip">$0</h3>
+                </section>
+            </main>
+            <footer>
+                <button id="tip-btn">Tip</button>
+
+            </footer>
+        </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
