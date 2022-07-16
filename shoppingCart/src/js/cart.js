@@ -9,4 +9,99 @@ let calculation = () => {
 
 calculation();
 
-let generateCartItem = () => {};
+let generateCartItem = () => {
+  //when basket's length not equal zero
+  if (basket.length !== 0) {
+    return (shoppingCart.innerHTML = basket
+      .map((x) => {
+        let { id, item } = x;
+        let search = shopItemsData.find((y) => y.id === id) || [];
+        return `
+        <div class="cart-item">
+          <img class="img-cart-size-smaller" src="${search.img}" alt="item">
+          <div class="details">
+
+            <div class="title-price-x">
+            <h4 class="title-price">
+              <p>${search.name}</p>
+              <p class="cart-item-price">@ $${search.price}</p>
+            </h4>
+            <i onclick="removeItem(${id})" class="red bold bi bi-x-lg"></i>
+            </div>
+
+            <div class="buttons">
+                <i onclick="decrement(${id})" class="red bi bi-dash-lg"></i>
+                <div id="${id}" class="quantity">${item}</div>
+                <i onclick="increment(${id})" class="green bi bi-plus-lg"></i>
+            </div>
+
+            <h3>$${item * search.price}</h3>
+          </div>
+        </div>
+        `;
+      })
+      .join(""));
+  } else {
+    //console.log("basket is empty");
+    shoppingCart.innerHTML = ``;
+    label.innerHTML = `
+    <h2>Opps, your cart is empty</h2>
+    <a href="index.html">
+    <button class="homeBtn">Continue shopping</button>
+    </a>
+    `;
+  }
+};
+
+generateCartItem();
+
+//Increase
+let increment = (id) => {
+  let selectedItem = id;
+  let search = basket.find((x) => x.id === selectedItem.id);
+
+  if (search === undefined) {
+    basket.push({
+      id: selectedItem.id,
+      item: 1,
+    });
+  } else {
+    search.item += 1;
+  }
+  generateCartItem(); //rerenders the cart items
+  update(selectedItem.id);
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+//Decrease
+let decrement = (id) => {
+  let selectedItem = id;
+  let search = basket.find((x) => x.id === selectedItem.id);
+  if (search === undefined) return;
+  else if (search.item === 0) return;
+  else {
+    search.item -= 1;
+  }
+  update(selectedItem.id);
+  basket = basket.filter((x) => x.item !== 0); //filters objects that equal 0
+  generateCartItem(); //generates the cards (needed to render cards after reaching 0)
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+//Updates the # of items
+let update = (id) => {
+  let search = basket.find((x) => x.id === id);
+  //console.log(search.item);
+  document.getElementById(id).innerHTML = search.item;
+  calculation();
+};
+
+//Remove item
+let removeItem = (id) => {
+  let selectedItem = id;
+  //console.log(selectedItem.id);
+  basket = basket.filter((x) => x.id !== selectedItem.id);
+  generateCartItem();
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+
+//Total amount
+let totalAmount = () => {};

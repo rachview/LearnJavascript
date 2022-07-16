@@ -24,7 +24,7 @@ let shopItemsData = [
   },
   {
     id: "suit",
-    name: "Mens 3-Piece Suit",
+    name: "Mens Suit",
     price: 300,
     desc: "A beautiful 3-piece suit for fancy and casual days.",
     img: "./images/img-4.jpg",
