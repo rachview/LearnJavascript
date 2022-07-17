@@ -16,15 +16,16 @@ let generateCartItem = () => {
       .map((x) => {
         let { id, item } = x;
         let search = shopItemsData.find((y) => y.id === id) || [];
+        let { img, name, price } = search; //destructing an object (search)
         return `
         <div class="cart-item">
-          <img class="img-cart-size-smaller" src="${search.img}" alt="item">
+          <img class="img-cart-size-smaller" src="${img}" alt="item">
           <div class="details">
 
             <div class="title-price-x">
             <h4 class="title-price">
-              <p>${search.name}</p>
-              <p class="cart-item-price">@ $${search.price}</p>
+              <p>${name}</p>
+              <p class="cart-item-price">@ $${price}</p>
             </h4>
             <i onclick="removeItem(${id})" class="red bold bi bi-x-lg"></i>
             </div>
@@ -47,7 +48,7 @@ let generateCartItem = () => {
     label.innerHTML = `
     <h2>Opps, your cart is empty</h2>
     <a href="index.html">
-    <button class="homeBtn">Continue shopping</button>
+    <button class="homeBtn">Continue Shopping</button>
     </a>
     `;
   }
@@ -92,6 +93,7 @@ let update = (id) => {
   //console.log(search.item);
   document.getElementById(id).innerHTML = search.item;
   calculation();
+  totalAmount();
 };
 
 //Remove item
@@ -100,8 +102,40 @@ let removeItem = (id) => {
   //console.log(selectedItem.id);
   basket = basket.filter((x) => x.id !== selectedItem.id);
   generateCartItem();
+  totalAmount();
+  calculation();
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+
+//Clear cart
+let clearCart = () => {
+  basket = [];
+  generateCartItem();
+  calculation();
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
 //Total amount
-let totalAmount = () => {};
+let totalAmount = () => {
+  if (basket.length !== 0) {
+    //if there is something inside the array...
+    let amount = basket
+      .map((x) => {
+        let { item, id } = x;
+        //search the id vs the data.js file (database)
+        let search = shopItemsData.find((y) => y.id === id) || [];
+        //item in the cart * search.price (database price set for item)
+        return item * search.price;
+      })
+      .reduce((x, y) => x + y, 0); //this sums the amount
+    //console.log(amount);
+    label.innerHTML = `
+    <h2>Total Bill: $${amount}</h2>
+    <button class="checkout">Checkout</button>
+    <button onclick="clearCart()" class="removeAll">Clear Cart</button>
+    <a href="index.html"><button class="keepshopping">Continue Shopping</button></a>
+    `;
+  } else return; //stop the code
+};
+
+totalAmount();

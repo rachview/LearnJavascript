@@ -64,6 +64,7 @@ a {
     grid-template-columns: repeat(4, 223px);
     gap: 20px;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 .img-cart-size {
@@ -77,6 +78,11 @@ a {
 .item {
     border: 2px solid var(--clr-primary);
     border-radius: 4px;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 2px 2px 0 0;
 }
 
 .details {
@@ -131,7 +137,10 @@ a {
     margin-bottom: 20px;
 }
 
-.homeBtn {
+.homeBtn,
+.checkout,
+.removeAll,
+.keepshopping {
     background-color: var(--clr-primary-lt);
     color: var(--clr-secondary);
     border: none;
@@ -140,6 +149,14 @@ a {
     cursor: pointer;
     font-size: 18px;
     margin-top: 1rem;
+}
+
+.checkout {
+    background-color: var(--clr-accent-two);
+}
+
+.removeAll {
+    background-color: var(--clr-accent);
 }
 
 /* shopping cart: style rules for shopping-cart class */
