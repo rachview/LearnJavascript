@@ -1,0 +1,91 @@
+:root {
+    --clr-primary: rgb(0, 67, 93);
+    --clr-secondary: rgb(241, 241, 241);
+    --clr-secondary-lt: rgba(255, 255, 255, 0.781);
+    --clr-secondary-ltr: rgba(255, 255, 255, 0.264);
+    --clr-neutral: rgba(57, 57, 57, 0.615);
+    --clr-neutral-lt: rgba(57, 57, 57, 0.066);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--clr-primary);
+}
+
+.container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    margin: 5em auto 0;
+    border-radius: 5px;
+    border: 1px var(--clr-neutral) solid;
+    background: linear-gradient(-45deg, var(--clr-neutral-lt), var(--clr-secondary-lt));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 3px 3px 5px 1px var(--clr-neutral), 0 8px 32px 0 var(--clr-neutral-lt), -1px -1px 10px var(--clr-secondary-ltr), inset 1px 1px 3px var(--clr-secondary-lt), inset -1px -1px 1px var(--clr-primary);
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 2rem auto;
+    overflow: hidden;
+    width: 300px;
+}
+
+.carousel__images {
+    display: flex;
+    transform: translateX(0);
+    transition: transform .25s;
+}
+
+.img {
+    border-radius: 5px;
+}
+
+.carousel__button {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 3rem;
+    background-color: var(--clr-primary);
+    border: 0;
+    border-radius: 50%;
+    color: var(--clr-secondary);
+    font-size: 1rem;
+    font-weight: bold;
+    height: 3rem;
+    opacity: .5;
+    transform: (1);
+    transition: all .5s;
+}
+
+.carousel__button:hover {
+    opacity: .875;
+    transform: scale(1.1)
+}
+
+.previous {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
