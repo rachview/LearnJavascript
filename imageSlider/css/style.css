@@ -1,0 +1,130 @@
+/* From Coding Snow: https: //www.youtube.com/watch?v=0wvrlOyGlq0 */
+:root {
+    --clr-primary: rgb(0, 67, 93);
+    --clr-secondary: rgb(241, 241, 241);
+    --clr-secondary-lt: rgba(255, 255, 255, 0.781);
+    --clr-secondary-ltr: rgba(255, 255, 255, 0.264);
+    --clr-neutral: rgba(57, 57, 57, 0.615);
+    --clr-neutral-lt: rgba(57, 57, 57, 0.066);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-primary);
+}
+
+.slider {
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img {
+    width: 800px;
+    height: 500px;
+}
+
+/* css for manual slide navigation */
+.navigation-manual {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid var(--clr-secondary);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background-color: var(--clr-secondary);
+}
+
+#radio1:checked~.first {
+    margin-left: 0;
+}
+
+#radio2:checked~.first {
+    margin-left: -20%;
+}
+
+#radio3:checked~.first {
+    margin-left: -40%;
+}
+
+#radio4:checked~.first {
+    margin-left: -60%;
+}
+
+/* css for automatic nav */
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    margin-top: 460px;
+}
+
+.navigation-auto div {
+    border: var(--clr-primary) solid 2px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+#radio1:checked~.navigation-auto .auto-btn1 {
+    background: var(--clr-primary);
+}
+
+#radio2:checked~.navigation-auto .auto-btn2 {
+    background: var(--clr-primary);
+}
+
+#radio3:checked~.navigation-auto .auto-btn3 {
+    background: var(--clr-primary);
+}
+
+#radio4:checked~.navigation-auto .auto-btn4 {
+    background: var(--clr-primary);
+}

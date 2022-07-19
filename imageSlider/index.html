@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- <img class="img" src="https://via.placeholder.com/300" alt=""> -->
+
+    <div class="container">
+        <!-- image slider start -->
+        <div class="slider">
+            <div class="slides">
+                <!-- radio btns starts-->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <!-- radio btns end -->
+                <!-- slide images start -->
+                <!-- image start -->
+                <div class="slide first">
+                    <img class="img" src="https://via.placeholder.com/800x500" alt="">
+                </div>
+                <!-- image end -->
+                <!-- image start -->
+                <div class="slide second">
+                    <img class="img" src="https://via.placeholder.com/800x500" alt="">
+                </div>
+                <!-- image end -->
+                <!-- image start -->
+                <div class="slide third">
+                    <img class="img" src="https://via.placeholder.com/800x500" alt="">
+                </div>
+                <!-- image end -->
+                <!-- image start -->
+                <div class="slide fourth">
+                    <img class="img" src="https://via.placeholder.com/800x500" alt="">
+                </div>
+                <!-- image end -->
+                <!-- slide images end -->
+                <!-- automatic nav start -->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+                <!-- automatic nav end -->
+            </div>
+            <!-- manual nav start-->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+            <!-- manual nav end-->
+        </div>
+        <!-- image slider end -->
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
