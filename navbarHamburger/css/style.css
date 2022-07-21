@@ -1,0 +1,143 @@
+:root {
+    --clr-primary: rgb(31, 31, 31);
+    --clr-secondary: rgb(255, 255, 255);
+    --clr-accent: rgb(94, 0, 49);
+    --clr-accent-lt: rgb(246, 100, 193);
+    --ff: 'Poppins', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    font-family: var(--ff);
+    color: var(--clr-secondary);
+    background-color: var(--clr-primary);
+}
+
+header {
+    background-color: var(--clr-accent);
+    position: sticky;
+    top: 0;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+.links {
+    text-decoration: none;
+    color: var(--clr-secondary)
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-branding {
+    font-size: 2rem;
+}
+
+.nav-link {
+    transition: .7s ease;
+}
+
+.nav-link:hover {
+    color: var(--clr-accent-lt);
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background-color: var(--clr-secondary);
+    border-radius: 4px;
+
+    visibility: hidden;
+}
+
+
+
+@media(max-width:700px) {
+    .bar {
+        visibility: visible;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--clr-accent);
+        width: 100%;
+        text-align: center;
+        transition: .3s;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    max-width: 1500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+section {
+    max-width: 50ch;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+section p {
+    margin-bottom: 1em;
+}
