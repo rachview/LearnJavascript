@@ -1,0 +1,260 @@
+/* From Online Tutorials: https: //www.youtube.com/watch?v=YRAoM4-Eb4A&t=0s */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    position: relative;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+    transition: .5s;
+    cursor: pointer;
+
+}
+
+header .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url(../img/menu.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .toggle.active {
+    background: url(../img/close.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-size: 25px;
+}
+
+header .toggle::before {
+    position: absolute;
+    content: "Menu";
+    right: 45px;
+    text-transform: uppercase;
+    color: #111;
+    letter-spacing: 2px;
+    font-size: 14px;
+    padding: 2px 5px;
+    background-color: #fff;
+}
+
+header .toggle.active::before {
+    content: "Close"
+}
+
+
+section video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Frosty background */
+.glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+    transition: .5s;
+    transition-delay: 1s;
+}
+
+section.active .glass {
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
+    transition-delay: 0s;
+}
+
+section .content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    transition: .5s;
+    transition-delay: 1s;
+}
+
+section.active .content {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-200px);
+    transition-delay: 0s;
+}
+
+section .content h2 {
+    position: relative;
+    color: #fff;
+    font-size: 10vw;
+    line-height: .55em;
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Dancing Script', cursive;
+}
+
+section .content h2 span {
+    font-size: .2em;
+    font-weight: 300;
+    letter-spacing: 5px;
+    background-color: #fff;
+    color: #111;
+    text-transform: uppercase;
+    padding: 0 10px;
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* list nav */
+section .list {
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
+    display: flex;
+    z-index: 100;
+}
+
+section .list li {
+    list-style: none;
+    margin: 5px;
+    padding: 0 6px;
+    background: #fff;
+    transition: .5s;
+    /* This delays each list item's coming/going. Neat. */
+    transition-delay: calc(.2s * var(--i));
+}
+
+/* Moves the links when section is active */
+section.active .list li {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+}
+
+section .list li a {
+    color: #111;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* Navigation */
+
+section .navigation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+section .navigation li {
+    list-style: none;
+    text-align: center;
+    margin: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    transform: translateX(200px);
+    /* Delays the animation of the items */
+    transition-delay: calc(.2s * var(--i));
+}
+
+section.active .navigation li {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0px);
+}
+
+section .navigation li a {
+    color: #111;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 4px 10px;
+    display: inline-block;
+}
+
+section .navigation li a:hover {
+    background-color: #111;
+    color: #fff;
+    letter-spacing: 10px;
+    text-transform: lowercase;
+}
+
+@media (max-width:991px) {
+    header {
+        padding: 20px;
+    }
+
+    section .list {
+        bottom: 20px;
+        right: 0px;
+    }
+
+    section .list li {
+        margin: 1px;
+    }
+
+    .glass {
+        width: 50%;
+    }
+
+    section .content h2 {
+        font-size: 18vw;
+    }
+
+    section .content h2 span {
+        font-size: .25em;
+        letter-spacing: 2px;
+        padding: 0 5px;
+    }
+}
