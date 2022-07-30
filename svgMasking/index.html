@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Masking: Design Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <video autoplay playsinline muted loop preload>
+        <source src="./video/marian_croitoru_video.mp4">
+    </video>
+
+    <svg height="100%" width="100%">
+        <defs>
+            <mask id="mask" x="0" y="0" height="100%" width="100%">
+                <rect x="0" y="0" height="100%" width="100%" />
+                <text x="50%" y="50%" fill="red" text-anchor="middle">I love SVGs</text>
+            </mask>
+        </defs>
+        <rect x="0" y="0" height="100%" width="100%" />
+    </svg>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
