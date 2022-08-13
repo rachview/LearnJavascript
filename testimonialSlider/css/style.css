@@ -1,0 +1,261 @@
+/* From: https://www.youtube.com/watch?v=FhkJ9e6aREs */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    cursor: default;
+}
+
+html {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(30, 30, 30);
+}
+
+.testim {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.testim .wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    padding: 40px 20px;
+    margin: auto;
+}
+
+.testim .arrow {
+    display: block;
+    position: absolute;
+    color: #eee;
+    cursor: pointer;
+    font-size: 2em;
+    top: 50%;
+    translate: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+    z-index: 2222222;
+}
+
+.testim .arrow::before {
+    cursor: pointer;
+}
+
+.testim .arrow.left {
+    left: 10px;
+}
+
+.testim .arrow.right {
+    right: 10px;
+}
+
+.testim .arrow:hover {
+    color: #e50f85;
+}
+
+.testim .dots {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 12px;
+    bottom: 60px;
+    left: 0;
+    display: block;
+    z-index: 3333;
+}
+
+.testim .dots .dot {
+    list-style: none;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+}
+
+/* When active class is called or hovered over... */
+.testim .dots .dot.active,
+.testim .dots .dot:hover {
+    background-color: #e50f85;
+    border-color: #e50f85;
+}
+
+.testim .dots .dot.active {
+    animation: testim-scale 0.5s ease-in-out forwards;
+}
+
+.testim .cont {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Div inside of .cont div */
+.testim .cont>div {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0 70px 0;
+    opacity: 0;
+}
+
+/* When inactive... */
+.testim .cont>div.inactive {
+    opacity: 1;
+}
+
+/* When active... */
+.testim .cont>div.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* Images */
+.testim .cont div .img img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.testim .cont div h2 {
+    color: #e50f85;
+    font-size: 1rem;
+    margin: 15px 0;
+}
+
+.testim .cont div p {
+    font-size: 1.15rem;
+    color: #eee;
+    width: 80%;
+    margin: auto;
+}
+
+.testim .cont div.active .img img {
+    animation: testim-show 0.5s ease-in-out forwards;
+}
+
+.testim .cont div.active h2 {
+    animation: testim-content-in 0.4s ease-in-out forwards;
+}
+
+.testim .cont div.active p {
+    animation: testim-content-in 0.5s ease-in-out forwards;
+}
+
+.testim .cont div.inactive .img img {
+    animation: testim-hide 0.5s ease-in-out forwards;
+}
+
+.testim .cont div.inactive h2 {
+    animation: testim-content-out 0.4s ease-in-out forwards;
+}
+
+.testim .cont div.inactive p {
+    animation: testim-content-out 0.5s ease-in-out forwards;
+}
+
+@keyframes testim-scale {
+    0% {
+        box-shadow: 0px 0px 0px 0px #eee;
+    }
+
+    35% {
+        box-shadow: 0px 0px 10px 5px #eee;
+    }
+
+    70% {
+        box-shadow: 0px 0px 10px 5px #e50f85;
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 0px #e50f85;
+    }
+}
+
+@keyframes testim-content-in {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes testim-content-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes testim-show {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes testim-hide {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Responsive */
+
+@media all and (max-width:300px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width:500px) {
+    .testim .arrow {
+        font-size: 1.5rem;
+    }
+
+    .testim .cont div {
+        line-height: 25px;
+    }
+}
