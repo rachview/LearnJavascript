@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch Slider with Easy Tutorial</title>
+    <!-- Icons from Iconscout -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<!-- 
+Had to change this A LOT from his tutorial because the swiper had updated.
+I also used unicons from iconscout rather than images, and uses lists and display flex instead of absolute positioning
+    !BUT IT WORKS!
+Images from pexel.
+ -->
+
+<body>
+    <div class="main">
+        <div class="header">
+            <ul class="list">
+                <li class="list-item icon"><i class="uil uil-bars"></i></li>
+                <li class="list-item title">MEET APP</li>
+                <li class="list-item icon"><i class="uil uil-bell"></i></li>
+            </ul>
+        </div>
+        <div class="main-text">
+            <h2>OUR TEAM</h2>
+            <small>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit harum tempore, officia iure vero id,
+                officiis similique, praesentium suscipit cumque recusandae neque aspernatur tenetur doloribus.</small>
+        </div>
+
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="slider-img" src="./img/chloe.jpg" alt="A potential client">
+                    <div class="info">
+                        <h3>Thomas Murkle</h3>
+                        <p>Founder & CEO</p>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img class="slider-img" src="./img/christina-morillo.jpg" alt="A potential client">
+                    <div class="info">
+                        <h3>Christina Morillo</h3>
+                        <p>Founder & CEO</p>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img class="slider-img" src="./img/creation-hill.jpg" alt="A potential client">
+                    <div class="info">
+                        <h3>Thomas Murkle</h3>
+                        <p>Founder & CEO</p>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img class="slider-img" src="./img/mentatdgt.jpg" alt="A potential client">
+                    <div class="info">
+                        <h3>Thomas Murkle</h3>
+                        <p>Founder & CEO</p>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img class="slider-img" src="./img/pixabay.jpg" alt="A potential client">
+                    <div class="info">
+                        <h3>Thomas Murkle</h3>
+                        <p>Founder & CEO</p>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- End Swiper -->
+
+
+        <div class="footer-menu">
+            <ul class="list">
+                <li class="list-item icon"><i class="uil uil-estate"></i></li>
+                <li class="list-item icon"><i class="uil uil-search"></i></li>
+                <li class="list-item icon"><i class="uil uil-user"></i></li>
+                <li class="list-item icon"><i class="uil uil-history-alt"></i></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 'auto',
+            spaceBetween: 40,
+            centerSlides: true,
+            grabCursor: true,
+            slidesPerGroup: 1,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            // navigation: {
+            //     nextEl: ".swiper-button-next",
+            //     prevEl: ".swiper-button-prev",
+            // },
+        });
+    </script>
+
+</body>
+
+</html>
