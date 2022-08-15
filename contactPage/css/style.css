@@ -1,0 +1,178 @@
+/* From: Part 1 https://www.youtube.com/watch?v=8kTPtrz7PiU */
+/* Part 2 https://www.youtube.com/watch?v=N6_0L6Ie9io&t=0s */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url(../img/pexels-magda-ehlers.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info {
+    color: white;
+    text-shadow: 0 0 3px rgb(0 0 0 / 1), 1px 1px 1px rgb(0 0 0 / 0.5);
+    max-width: 500px;
+    line-height: 65px;
+    padding-left: 50px;
+    font-size: 18px;
+}
+
+.contact-info i {
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin-right: 50px;
+}
+
+.contact-info,
+.contact-form {
+    flex: 1;
+}
+
+.contact-form h2 {
+    color: white;
+    text-shadow: 0 0 3px rgb(0 0 0 / 1), 1px 1px 1px rgb(0 0 0 / 0.5);
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.contact-form .text-box {
+    background: linear-gradient(to right,
+            rgb(255 255 255 / 1),
+            rgb(255 255 255 / .5),
+            rgb(255 255 255 / 0.2));
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 0.02), 0 0 1px rgb(255 255 255 / 0.51),
+        0 0 2px rgb(255 255 255 / 1), 0 1px 1px rgb(0 0 0 / 0.5);
+    border-radius: 5px;
+    border: 1px solid rgb(255 255 255 / 0.193);
+    color: black;
+    width: calc(50% - 10px);
+    height: 50px;
+    padding: 12px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-form .text-box::placeholder,
+.contact-form textarea::placeholder {
+    color: rgb(0, 0, 0 / 1);
+}
+
+
+.contact-form .text-box:first-child {
+    margin-right: 15px;
+}
+
+.contact-form textarea {
+    background: linear-gradient(to right,
+            rgb(255 255 255 / 1),
+            rgb(255 255 255 / .5),
+            rgb(255 255 255 / 0.2));
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 0.02), 0 0 1px rgb(255 255 255 / 0.51),
+        0 0 2px rgb(255 255 255 / 1), 0 1px 1px rgb(0 0 0 / 0.5);
+    border: 1px solid rgb(255 255 255 / 0.193);
+    border-radius: 5px;
+    color: black;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    min-height: 200px;
+    max-height: 400px;
+    resize: vertical;
+    margin-bottom: 20px;
+}
+
+.contact-form .send-btn {
+    float: right;
+    background: rgb(245, 245, 245);
+    box-shadow: inset 0 0 5px rgb(255 255 255 / 0.9), 0 1px 1px rgb(0 0 0 / 0.5);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.contact-form .send-btn:hover {
+    background: rgb(255, 255, 255);
+    box-shadow: inset 0 0 3px rgb(0 0 0 / 0.8), 0 0 1px 1px rgb(0 0 0 / .5);
+
+}
+
+@media screen and (max-width:950px) {
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+        margin: 30px 50px;
+    }
+
+    .contact-form h2 {
+        font-size: 30px;
+    }
+
+    .contact-form .text-box {
+        width: 100%;
+    }
+}
+
+/* Alert Message's CSS */
+
+.alert-success {
+    z-index: 1;
+    background: linear-gradient(to right, rgb(255 255 255), rgb(245 245 245), rgba(221, 255, 220, 0.9));
+    font-size: 18px;
+    padding: 20px 40px;
+    min-width: 420px;
+    position: fixed;
+    right: 0;
+    top: 10px;
+    border-left: 8px solid rgb(5 144 0);
+    border-radius: 5px;
+}
+
+.alert-error {
+    z-index: 1;
+    background: linear-gradient(to right, rgb(255 255 255), rgb(245 245 245), rgba(255 201 201 / 0.9));
+    font-size: 18px;
+    padding: 20px 40px;
+    min-width: 420px;
+    position: fixed;
+    right: 0;
+    top: 10px;
+    border-left: 8px solid rgb(211 2 2);
+    border-radius: 5px;
+}
