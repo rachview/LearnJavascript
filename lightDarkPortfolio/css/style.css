@@ -1,0 +1,361 @@
+/* From: https: //www.youtube.com/watch?v=2eFr9jvNHH8 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Transition for light */
+    transition: .3s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(241 241 241);
+    font-family: 'Poppins', sans-serif;
+    color: rgb(57 57 57);
+}
+
+h1 {
+    font-size: 70px;
+    line-height: 70px;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+/* This only effect the h2 elements in the squares 
+.square h2 {
+    margin: 50px 0 10px 0;
+}*/
+
+h2 {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+p {
+    margin: 0;
+    font-size: 20px;
+}
+
+a {
+    color: rgb(162 0 255);
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 200;
+}
+
+.dark a {
+    color: rgb(246 169 241);
+}
+
+/* These (like header, body, section) are a elements (first time heard someone explain it). */
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+}
+
+/* Whereas these are a class, and then there are #ids and so on. */
+.switch {
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    /* She says in order to make it a pill-shape make it half the height/width of the div, so 20px out of 40px--nice */
+    background-color: rgb(39 38 38);
+    position: relative;
+    /* Could use display flex, but position: relative is better for flicking the switch on and off */
+}
+
+.flicker {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(255 255 255);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    box-shadow:
+        inset 4px 4px 4px rgb(255 255 255),
+        inset -4px -4px 4px rgb(195 193 198 / 0.9);
+    transition: .3s;
+}
+
+/* Dark Class */
+.dark {
+    background-color: rgb(57 57 57);
+    /* Transition for dark */
+    transition: .3s;
+}
+
+.moon {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 0 rgb(255 255 255);
+    position: absolute;
+    top: 5px;
+    left: 45px;
+}
+
+/* If dark is applied to the body, looking for child/flicker class... */
+.dark .flicker {
+    /* Pushes the switch over */
+    transform: translateX(40px);
+}
+
+/* This says, if class of dark exist then every single child is... */
+.dark>* {
+    color: rgb(255 255 255);
+}
+
+.main {
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.main-text {
+    padding: 30px;
+    margin-bottom: 100px;
+}
+
+
+/* The projects squares*/
+.square {
+    width: 98%;
+    margin: 1%;
+    height: 350px;
+    background-color: rgb(255 255 255);
+    text-align: center;
+    border-radius: 20px;
+}
+
+.square-block {
+    background-color: rgb(255 255 255);
+    padding: 5px 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.dark .square-block {
+    background-color: rgb(31 31 31);
+}
+
+
+/* Dark Mode */
+.dark .square {
+    background-color: rgb(71 71 71);
+}
+
+
+#revenoo {
+    background-image: url("https://source.unsplash.com/500x600?calculator");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgb(214, 214, 214);
+}
+
+#burgerrator {
+    background-image: url("https://source.unsplash.com/500x600?burger");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgb(214, 214, 214);
+}
+
+#news {
+    background-image: url("https://source.unsplash.com/500x600?news");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgb(214, 214, 214);
+}
+
+#dates {
+    background-image: url("https://source.unsplash.com/500x600?date");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgb(214, 214, 214);
+}
+
+.sub-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Hero image */
+.hero-image {
+    position: relative;
+    width: 50%;
+    height: 350px;
+    display: block;
+    margin-bottom: 100px;
+}
+
+.cube {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    transform: rotate(-25deg) skew(25deg);
+}
+
+.cube::before {
+    position: absolute;
+    content: "";
+    width: 21px;
+    height: 100%;
+
+    transform: skewY(-45deg);
+    left: -20px;
+    bottom: -10px;
+}
+
+.cube::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 21px;
+    transform: skewX(-45deg);
+    left: -10px;
+    bottom: -20px;
+}
+
+#html {
+    left: 100px;
+    bottom: 80px;
+    background-image: url("../img/html5.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgb(175 119 227);
+    box-shadow: -60px 60px 20px rgb(50 50 50 / .15);
+}
+
+#html::before {
+    background-color: rgb(189 154 221);
+}
+
+#html::after {
+    background-color: rgb(205 188 221);
+}
+
+#css {
+    left: 250px;
+    bottom: 240px;
+    background-image: url("../img/css3.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgb(227 119 191);
+    box-shadow: -100px 100px 20px rgb(50 50 50 / .15);
+}
+
+#css::before {
+    background-color: rgb(221 154 207);
+}
+
+#css::after {
+    background-color: rgb(221 188 211);
+}
+
+#javascript {
+    left: 450px;
+    bottom: 200px;
+    background-image: url("../img/js.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgb(119, 227, 205);
+    box-shadow: -40px 40px 20px rgb(50 50 50 / .15);
+}
+
+#javascript::before {
+    background-color: rgb(154, 221, 205)
+}
+
+#javascript::after {
+    background-color: rgb(188, 221, 218)
+}
+
+#react {
+    left: 350px;
+    bottom: 40px;
+    background-image: url("../img/react.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgb(119, 191, 227);
+    box-shadow: -80px 80px 20px rgb(50 50 50 / .15);
+}
+
+#react::before {
+    background-color: rgb(154, 197, 221)
+}
+
+#react::after {
+    background-color: rgb(188, 210, 221)
+}
+
+.dark #html {
+    box-shadow: -60px 60px 20px rgb(0 0 0 / .5);
+}
+
+.dark #css {
+    box-shadow: -100px 100px 20px rgb(0 0 0 / .5);
+}
+
+.dark #javascript {
+    box-shadow: -40px 40px 20px rgb(0 0 0 / .5);
+}
+
+.dark #react {
+    box-shadow: -80px 80px 20px rgb(0 0 0 / .5);
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 100px 30px;
+    background-color: rgb(181 181 181);
+}
+
+/* Dark Mode */
+.dark footer {
+    background-color: rgb(28 28 28);
+}
+
+
+@media only screen and (min-width:970px) {
+    .main-text {
+        width: 50%;
+    }
+
+    .square {
+        width: 48%;
+        margin: 1%;
+        height: 600px;
+    }
+}
+
+@media only screen and (max-width:1300px) {
+    .hero-image {
+        display: none;
+    }
+}
