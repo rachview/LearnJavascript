@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar with Web Dev Simplified</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js" defer></script>
+</head>
+
+<!-- From: https://www.youtube.com/watch?v=TlP5WIxVirU -->
+
+<body>
+    <div class="search-wrapper">
+        <label for="search">Search Users</label>
+        <input type="search" id="search" data-search>
+    </div>
+    <div class="user-cards" data-user-cards-container></div>
+
+
+    <!-- Creating a template for the results -->
+    <!-- Create HTML that doesn't show up on the page: https://blog.webdevsimplified.com/2020-06/template-tag/ -->
+    <template data-user-template>
+        <div class="card">
+            <div class="header" data-header></div>
+            <div class="body" data-body></div>
+        </div>
+    </template>
+</body>
+
+</html>
