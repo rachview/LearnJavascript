@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <title>Swiper JS Tutorial with Adrian Twarog</title>
+
+</head>
+
+<!-- From https://swiperjs.com/get-started -->
+<!-- Tutorial: https://www.youtube.com/watch?v=4oyj_smPAjc -->
+
+<body>
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="parallax-bg" style="
+                  background-image: url(https://source.unsplash.com/1080x500?paintbrush);
+                " data-swiper-parallax="-23%"></div>
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <span class="slider-txt">Paint</span>
+            </div>
+            <div class="swiper-slide">
+                <div class="slider-txt" data-swiper-parallax="500" data-swiper-parallax-opacity="0">Paint Good</div>
+                <div class="subtitle" data-swiper-parallax="250" data-swiper-parallax-opacity="0">More Information</div>
+
+            </div>
+            <div class="swiper-slide"><span class="slider-txt">Paint Great</span>
+            </div>
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

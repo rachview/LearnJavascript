@@ -1,0 +1,44 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 50px;
+}
+
+.swiper {
+  height: 500px;
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+}
+
+.parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.subtitle {
+  font-size: 40px;
+  margin-top: 0.5em;
+}
+
+.subtitle,
+.slider-txt {
+  background-color: rgba(255, 255, 255, 0.795);
+  border: 1px solid white;
+  padding: 0.25em 0.5em;
+  border-radius: 1em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
