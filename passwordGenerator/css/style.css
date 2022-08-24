@@ -1,0 +1,127 @@
+body {
+  background-color: rgb(24, 24, 24);
+  color: rgb(244, 244, 244);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  background-color: rgb(46, 91, 109);
+  padding: 3rem;
+  border-radius: 1rem;
+  border: 2px solid rgb(24, 24, 24);
+  display: grid;
+  place-items: center;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  column-gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  line-height: 0.875;
+  text-transform: uppercase;
+}
+
+.title__span {
+  color: rgb(0, 183, 255);
+}
+
+label {
+  font-weight: 200;
+  letter-spacing: 1.875px;
+  cursor: pointer;
+}
+
+.character-amount-container {
+  display: flex;
+  align-items: center;
+}
+
+.number-input {
+  width: 2rem;
+}
+
+.password-display {
+  background-color: rgb(244, 244, 244);
+  color: rgb(24, 24, 24);
+  padding: 1rem;
+  border: 1px solid rgb(24, 24, 24);
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 350px;
+  display: grid;
+  place-items: center;
+  word-break: break-all;
+}
+
+.btn {
+  cursor: pointer;
+  grid-column: span 2;
+  color: rgb(244, 244, 244);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: transparent;
+  border: 2px solid rgb(244, 244, 244);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 4px 3px 10px 0 rgba(24, 24, 24),
+    inset 2px 3px 5px rgba(0, 183, 255, 0.268);
+  transition: letter-spacing ease 0.3s, box-shadow ease 0.8s;
+}
+
+.btn:hover {
+  letter-spacing: 4.5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 1px 1px rgba(24, 24, 24, 0.474);
+}
+
+/* From https://www.youtube.com/watch?v=y93M3RoKQUE */
+.checkbox-style {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  -webkit-appearence: none;
+  background-color: rgb(244, 244, 244);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-style::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  font-size: 15px;
+  color: rgb(244, 244, 244);
+  display: none;
+}
+
+input[type="checkbox"]:hover {
+  background-color: rgba(0, 183, 255, 0.268);
+}
+
+input[type="checkbox"]:checked {
+  background-color: rgb(0, 183, 255);
+}
+
+input[type="checkbox"]:checked::after {
+  display: block;
+}

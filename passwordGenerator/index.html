@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./js/index.js" defer></script>
+
+    <title>Password Generator with Web Dev Simplified</title>
+
+    <!-- https://www.youtube.com/watch?v=iKo9pDKKHnc -->
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title"><span class="title__span">Password</span> Generator</h1>
+        <h3 class="password-display" id="password-display">password</h3>
+        <form class="form" id="passwordGenerator">
+
+            <label for="characterAmountNumber">Number of Characters</label>
+            <div class="character-amount-container">
+                <input type="range" min="1" max="50" value="10" id="characterAmountRange">
+                <input class="number-input" type="number" min="1" max="50" value="10" id="characterAmountNumber">
+            </div>
+
+
+            <label class="label-checkboxes" for="includeUppercase">Include Uppercase</label>
+            <input class="checkbox-style" type="checkbox" id="includeUppercase">
+            <label class="label-checkboxes" for="includeNumbers">Include Numbers</label>
+            <input class="checkbox-style" type="checkbox" id="includeNumbers">
+            <label class="label-checkboxes" for="includeSymbols">Include Symbols</label>
+            <input class="checkbox-style" type="checkbox" id="includeSymbols">
+
+            <button class="btn" type="submit">Generate Password</button>
+        </form>
+    </div>
+</body>
+
+</html>
