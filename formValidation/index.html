@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Florin Pop's Form Validation</title>
+
+    <!-- style -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: hsl(270, 26%, 52%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            background-color: hsl(0, 0%, 100%);
+            border-radius: 1em;
+            box-shadow: 0 2px 5px hsla(270, 24%, 33%, 0.904);
+            width: 400px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: hsla(270, 67%, 74%, 0.181);
+            padding: 20px 40px;
+            border-bottom: 1px solid hsl(270, 26%, 52%);
+        }
+
+        .header h2 {
+            font-weight: 600;
+        }
+
+        .form {
+            padding: 30px 40px;
+        }
+
+        .form-control {
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        .form-control label {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .form-control input {
+            border: 2px solid hsla(270, 24%, 33%, 0.904);
+            border-radius: 1em;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .form-control.success input {
+            border-color: hsl(145, 63%, 49%);
+        }
+
+        .form-control.error input {
+            border-color: hsl(0, 97%, 42%);
+        }
+
+        .form-control i {
+            visibility: hidden;
+            position: absolute;
+            top: 40px;
+            right: 10px;
+        }
+
+        .form-control.success i.fa-check-circle {
+            visibility: visible;
+            color: hsl(145, 63%, 49%);
+        }
+
+        .form-control.error i.fa-exclamation-circle {
+            visibility: visible;
+            color: hsl(0, 97%, 42%);
+        }
+
+        .form-control small {
+            visibility: hidden;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .form-control.error small {
+            visibility: visible;
+            color: hsl(0, 97%, 42%);
+        }
+
+        .form button {
+            background-color: hsl(270, 31%, 58%);
+            border: 2px solid hsl(270, 31%, 58%);
+            border-radius: .5em;
+            color: hsl(0, 0%, 100%);
+            display: block;
+            padding: 10px;
+            font-family: inherit;
+            font-size: 16px;
+            width: 100%;
+            transition: 250ms ease-in-out all;
+        }
+
+        .form button:hover {
+            background-color: hsla(270, 67%, 74%, 0.181);
+            color: hsl(270, 26%, 52%)
+        }
+    </style>
+</head>
+<!-- From Florin Pop: https://www.youtube.com/watch?v=rsd4FNGTRBw -->
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Create Account</h2>
+        </div>
+        <form class="form" id="form">
+
+            <!-- input-start -->
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Your Username" id="username">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
+            </div>
+            <!-- input-end -->
+
+            <!-- input-start -->
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" placeholder="Your Email Address" id="email">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
+            </div>
+            <!-- input-end -->
+
+            <!-- input-start -->
+            <div class="form-control">
+                <label for="Password">Password</label>
+                <input type="password" placeholder="Your Password" id="password">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
+            </div>
+            <!-- input-end -->
+
+            <!-- input-start -->
+            <div class="form-control">
+                <label for="Password">Confirm Password</label>
+                <input type="password" placeholder="Your Password" id="password2">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
+            </div>
+            <!-- input-end -->
+
+            <!-- button -->
+            <button id="btn-submit" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- JS -->
+    <script>
+        const form = document.getElementById('form');
+        const username = document.getElementById('username');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const password2 = document.getElementById('password2');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            checkInputs();
+        })
+
+        function checkInputs() {
+            //get values from inputs
+            const usernameValue = username.value.trim();
+            const emailValue = email.value.trim();
+            const passwordValue = password.value.trim();
+            const password2Value = password2.value.trim();
+
+            //Username
+            if (usernameValue === '') {
+                //show error
+                //add error class
+                setErrorFor(username, 'Username cannot be empty');
+            } else {
+                //add success class
+                setSuccessFor(username);
+            }
+            //Email
+            if (emailValue === '') {
+                //show error
+                //add error class
+                setErrorFor(email, 'Email cannot be empty');
+            } else if (!isEmail(emailValue)) {
+                setErrorFor(email, 'Email is not valid')
+            }
+            else {
+                //add success class
+                setSuccessFor(email);
+            }
+            //Password
+            if (passwordValue === '') {
+                //show error
+                //add error class
+                setErrorFor(password, 'Password cannot be empty');
+            } else {
+                //add success class
+                setSuccessFor(password);
+            }
+            //Password Check
+            if (password2Value === '') {
+                //show error
+                //add error class
+                setErrorFor(password2, 'Password cannot be empty');
+            } else if (passwordValue !== password2Value) {
+                //Check to see if passwords match and throw error if they don't
+                //add error class
+                setErrorFor(password2, 'Passwords does not match');
+            }
+
+            else {
+                //add success class
+                setSuccessFor(password2);
+            }
+        }
+
+        //Error
+        function setErrorFor(input, message) {
+            const formControl = input.parentElement; //.form control div
+            const small = formControl.querySelector('small') //small tag;
+
+            //add error message inside small
+            small.innerText = message;
+
+            //add error class
+            formControl.className = 'form-control error';
+        }
+
+        //Success
+        function setSuccessFor(input) {
+            const formControl = input.parentElement; //.form control div
+
+            //add success class
+            formControl.className = 'form-control success';
+        }
+
+        //Email
+        function isEmail(email) {
+            return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+        }
+    </script>
+</body>
+
+</html>
